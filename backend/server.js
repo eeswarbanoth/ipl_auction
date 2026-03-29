@@ -43,6 +43,10 @@ app.use('/api/players', require('./routes/players'));
 app.use('/api/teams', require('./routes/teams'));
 app.use('/api/auction', require('./routes/auction'));
 
+app.get('/', (req, res) => {
+  res.send('Server is running 🔥');
+});
+
 // Socket.io connection
 io.on('connection', (socket) => {
   console.log(`User connected: ${socket.id}`);
